@@ -1,7 +1,8 @@
-// db.jsからgetFirestorePaths関数をインポート
-import { getFirestorePaths  } from '../../lib/db';
+// db.jsからgetFirestoreIds関数をインポート
+import { getFirestoreIds  } from '../../lib/db';
 
-const test = () => {
+const Test = () => {
+
   return (
     <div>
       テストページ
@@ -9,12 +10,12 @@ const test = () => {
   );
 }
 
-export default test;
+export default Test;
 
 // getStaticPathsでレンダリングするページのパスを指定する
 export async function getStaticPaths() {
   // レンダリングするページのパス
-  const paths = await getFirestorePaths();
+  const paths = await getFirestoreIds();
 
   return {
     paths: paths,
@@ -29,7 +30,5 @@ export async function getStaticProps() {
     props: { query: {} },
   }
 }
-
-
 
 
